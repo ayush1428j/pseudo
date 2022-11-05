@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>globalTime</title>
+<style>
+    *{background-color: red;}
+    #show{background-color: white;
+        height: 300px;
+        display: flex;
+    justify-content: center;
+    align-items: center;}
+</style>
+</head>
+<body>
+<p><span id="show"></span></p>
+
+
+<script>
+   const desh= prompt(`Enter timezone eg:'Asia/Kathmandu'`)
+// const desh=('Asia/Kolkata')
+    function time(){
+        const date=new Date()
+        const samaye=date.toLocaleTimeString('en-US',{timeZone:desh,
+            hour:'2-digit',
+            minute:'2-digit',
+            second:'2-digit'
+        })
+        document.getElementById('show').innerHTML=('the time now in  ' +desh+ ' is '+'<br>'+samaye);
+    }
+        
+        setInterval(time,1000)
+    
+</script>
+</body>
+</html>
